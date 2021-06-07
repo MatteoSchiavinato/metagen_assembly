@@ -1,0 +1,56 @@
+#!/usr/bin/env Rscript
+
+# import modules
+library(ggplot2)
+
+# read command line arguments
+args = commandArgs(trailingOnly=TRUE)
+contig_lengths <- args[1]
+sample_id <- args[2]
+read_type <- args[3]
+subset_ctg_len <- as.numeric(args[4])
+
+# read data frame
+df <- read.table(contig_lengths, sep="\t", header=F)
+df <- cbind(df, "All contigs")
+colnames(df) <- c("Contigs", "Length", "Sample")
+df$Sample <- factor(df$Sample, levels=unique(df$Sample))
+df$Length <- as.numeric(as.character(df$Length))
+df$Length <- df$Length / 1000
+subset_ctg_len <- subset_ctg_len / 1000
+
+# subset data frame
+sub <- df
+sub <- sub[sub$Length < subset_ctg_len , ]
+sub$Sample <- paste(paste("contigs", subset_ctg_len, sep=" < "), "kb", sep=" ")
+
+# bind them
+x <- rbind(df, sub)
+colnames(x) <- c("Contigs", "Length", "Sample")
+x$Sample <- factor(x$Sample, levels=unique(x$Sample))
+x$Length <- as.numeric(as.character(x$Length))
+
+# plot
+P1 <- ggplot(data=x, mapping=aes(x=Sample, y=Length)) +
+geom_violin(trim=FALSE, fill='#A4A4A4', color="darkred") +
+geom_boxplot(width=0.1) +
+ggtitle("Contig length distribution") +
+theme(aspect.ratio=0.2,
+      axis.title=element_text(family="Helvetica", face="plain", colour="grey20", size=12),
+      axis.text=element_text(family="Helvetica", face="plain", colour="grey20", size=10),
+      plot.title=element_text(family="Helvetica", face="bold", colour="grey20", size=12)) +
+scale_x_discrete(name=NULL, breaks=NULL, labels=NULL) +
+scale_y_continuous(name="Length [kb]") +
+coord_flip() +
+facet_wrap(~Sample, ncol=1, nrow=2, scales="free")
+
+# save to output file
+out_file <- paste(sample_id, read_type, "contig_lengths", "svg", sep=".")
+svg(out_file)
+P1
+dev.off()
+
+out_file <- paste(sample_id, read_type, "contig_lengths", "png", sep=".")
+png(out_file, width=1250, height=650, res=170)
+P1
+dev.off()
