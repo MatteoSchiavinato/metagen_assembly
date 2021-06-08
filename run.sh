@@ -6,7 +6,7 @@ WD="/gpfs/data/fs71579/schmat90/CF/projects/meta/${PROJECT}"
 echo """\
 #!/usr/bin/env sh
 #SBATCH -N 1
-#SBATCH -J as-MetaPac
+#SBATCH -J wf-CANU
 #SBATCH --mail-type FAIL,END
 #SBATCH --mail-user matteo.schiavinato@boku.ac.at
 #SBATCH --account p71579

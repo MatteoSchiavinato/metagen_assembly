@@ -45,12 +45,10 @@ Channel
 
 process remove_host_reads {
 
-    executor = 'slurm'
-    module = ['python/3.8.0-gcc-9.1.0-wkjbtaa']
-    clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = params.threads
 
-    publishDir "${params.output_dir}/filt_reads",
-    mode: "copy"
+  publishDir "${params.output_dir}/filt_reads", mode: "copy"
 
   input:
     tuple val(sample_id), val(read_type), file(fasta) from Minimap
@@ -60,35 +58,33 @@ process remove_host_reads {
     file "${sample_id}.${read_type}.no_host.fasta"  into NoHost_count
 
   script:
-  """
-  ${MINIMAP2} \
-  -H \
-  -k ${params.minimap_kmer_size} \
-  -d host_genome.mm2_index \
-  -a \
-  -t ${params.threads} \
-  -x map-pb \
-  ${params.host_genome_seq} \
-  ${fasta} | \
-  ${SAMTOOLS} fasta \
-  -@ ${params.threads} \
-  -f 0x4 -F 0x0100 \
-  - \
-  > ${sample_id}.${read_type}.no_host.fasta
+    """
+    ${MINIMAP2} \
+    -H \
+    -k ${params.minimap_kmer_size} \
+    -d host_genome.mm2_index \
+    -a \
+    -t ${params.threads} \
+    -x map-pb \
+    ${params.host_genome_seq} \
+    ${fasta} | \
+    ${SAMTOOLS} fasta \
+    -@ ${params.threads} \
+    -f 0x4 -F 0x0100 \
+    - \
+    > ${sample_id}.${read_type}.no_host.fasta \
 
-  """
+    """
 }
 
 // count removed reads
 
 process count_reads_wo_host {
 
-  executor = 'slurm'
-  module = ['python/3.8.0-gcc-9.1.0-wkjbtaa']
-  clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = 1
 
-  publishDir "${params.output_dir}/statistics",
-  mode: "copy"
+  publishDir "${params.output_dir}/statistics", mode: "copy"
 
   input:
     file all_fastas from NoHost_count.collect()
@@ -115,12 +111,10 @@ process count_reads_wo_host {
 
 process remove_human_reads {
 
-    executor = 'slurm'
-    module = ['python/3.8.0-gcc-9.1.0-wkjbtaa']
-    clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = params.threads
 
-    publishDir "${params.output_dir}/filt_reads",
-    mode: "copy"
+  publishDir "${params.output_dir}/filt_reads", mode: "copy"
 
   input:
     tuple val(sample_id), val(read_type), file(fasta) from NoHost
@@ -154,12 +148,10 @@ process remove_human_reads {
 
 process count_reads_wo_human {
 
-  executor = 'slurm'
-  module = ['python/3.8.0-gcc-9.1.0-wkjbtaa']
-  clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = 1
 
-  publishDir "${params.output_dir}/statistics",
-  mode: "copy"
+  publishDir "${params.output_dir}/statistics", mode: "copy"
 
   input:
     file all_fastas from NoHuman_count.collect()
@@ -190,8 +182,7 @@ process canu_assembly {
   module = ['gnuplot/5.2.8-gcc-9.1.0-2dqwfce']
   clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
 
-  publishDir "${params.output_dir}/assembly/canu",
-  mode: "copy"
+  publishDir "${params.output_dir}/assembly/canu", mode: "copy"
 
   input:
     tuple val(sample_id), val(read_type), file(fasta) from NoHuman_canu
@@ -243,12 +234,10 @@ process canu_assembly {
 
 process metaquast {
 
-    executor = 'slurm'
-    module = ['python/3.8.0-gcc-9.1.0-wkjbtaa']
-    clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+    executor = 'local'
+    cpus = params.threads
 
-    publishDir "${params.output_dir}/assembly",
-    mode: "copy"
+    publishDir "${params.output_dir}/assembly", mode: "copy"
 
   input:
     file all_fastas from Canu_quast.collect()
@@ -258,6 +247,7 @@ process metaquast {
 
   script:
   """
+    ${PYTHON3} \
     ${METAQUAST} \
     --output-dir metaquast \
     --contig-thresholds ${params.contig_thresholds} \
@@ -271,14 +261,12 @@ process metaquast {
 
 
 // calculate contig lengths
-process plot_ctg_lengths {
+process get_ctg_lengths {
 
-  executor = 'slurm'
-  module = []
-  clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = 1
 
-  publishDir "${params.output_dir}/assembly/canu",
-  mode: "copy"
+  publishDir "${params.output_dir}/assembly/canu", mode: "copy"
 
   input:
     tuple val(sample_id), val(read_type), file(contigs_fasta) from Contigs_plot
@@ -302,19 +290,17 @@ process plot_ctg_lengths {
 
 process plot_ctg_lengths {
 
-  executor = 'slurm'
-  module = []
-  clusterOptions = "-N 1 --ntasks-per-node ${params.threads} --partition mem_0096 --qos mem_0096 --account p71579"
+  executor = "local"
+  cpus = params.threads
 
-  publishDir "${params.output_dir}/assembly/canu",
-  mode: "copy"
+  publishDir "${params.output_dir}/assembly/canu", mode: "copy"
 
   input:
     tuple val(sample_id), val(read_type), file(contig_lengths) from Contig_lengths
 
   output:
-    file "ALL.ccs.contig_lengths.png" into ctg_len_png
-    file "ALL.ccs.contig_lengths.svg" into ctg_len_svg
+    file "${sample_id}.${read_type}.contig_lengths.png" into Ctg_len_pngs
+    file "${sample_id}.${read_type}.contig_lengths.svg" into Ctg_len_svgs
 
   script:
     """
