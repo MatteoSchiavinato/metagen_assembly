@@ -196,6 +196,7 @@ process canu_assembly {
     into Canu_out
     file("${sample_id}.${read_type}.contigs.fasta") into Canu_quast
     tuple val(sample_id), val(read_type), file("${sample_id}.${read_type}.contigs.fasta") into Contigs_plot
+    tuple val(sample_id), val(read_type), file("${sample_id}.${read_type}.contigs.fasta") into Contigs_prokka
 
   script:
     """
@@ -247,7 +248,6 @@ process metaquast {
 
   script:
   """
-    ${PYTHON3} \
     ${METAQUAST} \
     --output-dir metaquast \
     --contig-thresholds ${params.contig_thresholds} \
@@ -310,6 +310,41 @@ process plot_ctg_lengths {
     ${sample_id} \
     ${read_type} \
     100000 \
+
+    """
+}
+
+
+
+// run prokka to annotate the whole contigs at once
+
+process run_prokka {
+
+  executor = "local"
+  cpus = params.threads
+
+  publishDir "${params.output_dir}/pangenome/prokka", mode: "copy"
+
+  input:
+    tuple val(sample_id), val(read_type), file(fasta) from Contigs_prokka
+
+  output:
+    tuple val(sample_id), path("${sample_id}", type:"dir") into Prokka_out
+
+  script:
+    """
+    ${PROKKA} \
+    --metagenome \
+    --cpus ${params.threads} \
+    --kingdom ${params.kingdom} \
+    --outdir ${sample_id} \
+    --prefix ${sample_id} \
+    --addgenes \
+    --addmrna \
+    --gffver 3 \
+    --evalue ${params.evalue} \
+    --mincontiglen ${params.min_contig_len} \
+    ${fasta} \
 
     """
 }

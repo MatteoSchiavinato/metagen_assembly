@@ -1,739 +1,91 @@
 N E X T F L O W  ~  version 20.10.0
-Launching `main.nf` [high_lavoisier] - revision: a564740e40
+Launching `main.nf` [cranky_einstein] - revision: d26d9ce7bb
 [-        ] process > remove_host_reads   -
 [-        ] process > count_reads_wo_host -
-[-        ] process > remove_human_reads  -
 
-[-        ] process > remove_host_reads    [  0%] 0 of 6
-[-        ] process > count_reads_wo_host  -
-[-        ] process > remove_human_reads   -
-[-        ] process > count_reads_wo_human -
-[-        ] process > canu_assembly        -
-[-        ] process > metaquast            -
-[-        ] process > metabat2             -
-
-executor >  slurm (1)
-[15/e45884] process > remove_host_reads (2) [  0%] 0 of 6
+[ed/094214] process > remove_host_reads (3) [100%] 6 of 6, cached: 6
 [-        ] process > count_reads_wo_host   -
 [-        ] process > remove_human_reads    -
 [-        ] process > count_reads_wo_human  -
 [-        ] process > canu_assembly         -
 [-        ] process > metaquast             -
-[-        ] process > metabat2              -
+[-        ] process > get_ctg_lengths       -
+[-        ] process > plot_ctg_lengths      -
 
-executor >  slurm (2)
-[e7/f18bfc] process > remove_host_reads (6) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (3)
-[dc/69ea7d] process > remove_host_reads (4) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (4)
-[bb/4d0969] process > remove_host_reads (1) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (5)
-[c3/31ca85] process > remove_host_reads (3) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (6)
-[db/243886] process > remove_host_reads (5) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (6)
-[db/243886] process > remove_host_reads (5) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (6)
-[db/243886] process > remove_host_reads (5) [  0%] 0 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    -
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (6)
-[e7/f18bfc] process > remove_host_reads (6) [ 33%] 2 of 6
-[-        ] process > count_reads_wo_host   -
-[-        ] process > remove_human_reads    [  0%] 0 of 2
-[-        ] process > count_reads_wo_human  -
-[-        ] process > canu_assembly         -
-[-        ] process > metaquast             -
-[-        ] process > metabat2              -
-
-executor >  slurm (7)
-[e7/f18bfc] process > remove_host_reads (6)  [ 33%] 2 of 6
-[-        ] process > count_reads_wo_host    -
-[20/a45ae8] process > remove_human_reads (1) [  0%] 0 of 2
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
 [-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (8)
-[e7/f18bfc] process > remove_host_reads (6)  [ 33%] 2 of 6
-[-        ] process > count_reads_wo_host    -
-[1d/3c43e1] process > remove_human_reads (2) [  0%] 0 of 2
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (8)
-[dc/69ea7d] process > remove_host_reads (4)  [ 50%] 3 of 6
-[-        ] process > count_reads_wo_host    -
-[1d/3c43e1] process > remove_human_reads (2) [  0%] 0 of 3
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (9)
-[dc/69ea7d] process > remove_host_reads (4)  [ 50%] 3 of 6
-[-        ] process > count_reads_wo_host    -
-[34/ffd766] process > remove_human_reads (3) [  0%] 0 of 3
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (9)
-[dc/69ea7d] process > remove_host_reads (4)  [ 50%] 3 of 6
-[-        ] process > count_reads_wo_host    -
-[34/ffd766] process > remove_human_reads (3) [  0%] 0 of 3
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (9)
-[c3/31ca85] process > remove_host_reads (3)  [ 83%] 5 of 6
-[-        ] process > count_reads_wo_host    -
-[34/ffd766] process > remove_human_reads (3) [  0%] 0 of 5
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (10)
-[c3/31ca85] process > remove_host_reads (3)  [ 83%] 5 of 6
-[-        ] process > count_reads_wo_host    -
-[76/17c533] process > remove_human_reads (4) [  0%] 0 of 5
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (11)
-[c3/31ca85] process > remove_host_reads (3)  [ 83%] 5 of 6
-[-        ] process > count_reads_wo_host    -
-[20/159675] process > remove_human_reads (5) [  0%] 0 of 5
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (11)
-[c3/31ca85] process > remove_host_reads (3)  [ 83%] 5 of 6
-[-        ] process > count_reads_wo_host    -
-[20/159675] process > remove_human_reads (5) [  0%] 0 of 5
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (11)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[-        ] process > count_reads_wo_host    [  0%] 0 of 1
-[20/159675] process > remove_human_reads (5) [  0%] 0 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (12)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[-        ] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [  0%] 0 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (13)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [  0%] 0 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (13)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [  0%] 0 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (13)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [  0%] 0 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (13)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[20/a45ae8] process > remove_human_reads (1) [ 17%] 1 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          -
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (13)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[20/a45ae8] process > remove_human_reads (1) [ 17%] 1 of 6
-[-        ] process > count_reads_wo_human   -
-[-        ] process > canu_assembly          [  0%] 0 of 1
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (14)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[20/a45ae8] process > remove_human_reads (1) [ 17%] 1 of 6
-[-        ] process > count_reads_wo_human   -
-[fe/09115c] process > canu_assembly (1)      [  0%] 0 of 1
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (14)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[20/a45ae8] process > remove_human_reads (1) [ 17%] 1 of 6
-[-        ] process > count_reads_wo_human   -
-[fe/09115c] process > canu_assembly (1)      [  0%] 0 of 1
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (14)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[1d/3c43e1] process > remove_human_reads (2) [ 33%] 2 of 6
-[-        ] process > count_reads_wo_human   -
-[fe/09115c] process > canu_assembly (1)      [  0%] 0 of 2
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (15)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[1d/3c43e1] process > remove_human_reads (2) [ 33%] 2 of 6
-[-        ] process > count_reads_wo_human   -
-[44/6d3987] process > canu_assembly (2)      [  0%] 0 of 2
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (15)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[34/ffd766] process > remove_human_reads (3) [ 50%] 3 of 6
-[-        ] process > count_reads_wo_human   -
-[44/6d3987] process > canu_assembly (2)      [  0%] 0 of 3
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (16)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[34/ffd766] process > remove_human_reads (3) [ 50%] 3 of 6
-[-        ] process > count_reads_wo_human   -
-[1c/fa6e39] process > canu_assembly (3)      [  0%] 0 of 3
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (16)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[34/ffd766] process > remove_human_reads (3) [ 50%] 3 of 6
-[-        ] process > count_reads_wo_human   -
-[1c/fa6e39] process > canu_assembly (3)      [  0%] 0 of 3
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (16)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[34/ffd766] process > remove_human_reads (3) [ 50%] 3 of 6
-[-        ] process > count_reads_wo_human   -
-[1c/fa6e39] process > canu_assembly (3)      [  0%] 0 of 3
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (16)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[76/17c533] process > remove_human_reads (4) [ 67%] 4 of 6
-[-        ] process > count_reads_wo_human   -
-[1c/fa6e39] process > canu_assembly (3)      [  0%] 0 of 4
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (17)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[76/17c533] process > remove_human_reads (4) [ 67%] 4 of 6
-[-        ] process > count_reads_wo_human   -
-[b2/f4791d] process > canu_assembly (4)      [  0%] 0 of 4
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (17)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[-        ] process > count_reads_wo_human   [  0%] 0 of 1
-[b2/f4791d] process > canu_assembly (4)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (18)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[-        ] process > count_reads_wo_human   [  0%] 0 of 1
-[10/1e8caa] process > canu_assembly (5)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (19)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[-        ] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [  0%] 0 of 1
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [  0%] 0 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               -
-
-executor >  slurm (20)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[fe/09115c] process > canu_assembly (1)      [ 17%] 1 of 6
-[-        ] process > metaquast              -
-[-        ] process > metabat2               [  0%] 0 of 1
-
-executor >  slurm (21)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[fe/09115c] process > canu_assembly (1)      [ 17%] 1 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [  0%] 0 of 1
-
-executor >  slurm (21)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[fe/09115c] process > canu_assembly (1)      [ 17%] 1 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [  0%] 0 of 1
-
-executor >  slurm (21)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[44/6d3987] process > canu_assembly (2)      [ 33%] 2 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [  0%] 0 of 2
-
-executor >  slurm (22)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[44/6d3987] process > canu_assembly (2)      [ 33%] 2 of 6
-[-        ] process > metaquast              -
-[97/62b07b] process > metabat2 (2)           [  0%] 0 of 2
-
-executor >  slurm (22)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[44/6d3987] process > canu_assembly (2)      [ 33%] 2 of 6
-[-        ] process > metaquast              -
-[97/62b07b] process > metabat2 (2)           [  0%] 0 of 2
-
-executor >  slurm (22)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[b2/f4791d] process > canu_assembly (4)      [ 50%] 3 of 6
-[-        ] process > metaquast              -
-[97/62b07b] process > metabat2 (2)           [  0%] 0 of 3
-
-executor >  slurm (23)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[b2/f4791d] process > canu_assembly (4)      [ 50%] 3 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [  0%] 0 of 3
-
-executor >  slurm (23)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[b2/f4791d] process > canu_assembly (4)      [ 50%] 3 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [  0%] 0 of 3
-
-executor >  slurm (23)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[b2/f4791d] process > canu_assembly (4)      [ 50%] 3 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [  0%] 0 of 3
-
-executor >  slurm (23)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [  0%] 0 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [  0%] 0 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [  0%] 0 of 1
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [  0%] 0 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [  0%] 0 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [  0%] 0 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [ 25%] 1 of 4
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[c8/9b6039] process > canu_assembly (6)      [ 67%] 4 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [ 25%] 1 of 4
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/82/b76cf5584eb3f2477ef34ef3b16fb5/D35C_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/D35C_out [copy] -- See log file for details
-
-executor >  slurm (24)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[82/b76cf5] process > metabat2 (1)           [ 20%] 1 of 5
-
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[f0/6e96b9] process > metabat2 (5)           [ 20%] 1 of 5
-
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[97/62b07b] process > metabat2 (2)           [ 40%] 2 of 5
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [ 60%] 3 of 5
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/97/62b07b5680f74c58177ec18b6962ea/D14A_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/D14A_out [copy] -- See log file for details
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/7a/04a60eb7afb5547695e48c90fbb2e4/POOL_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/POOL_out [copy] -- See log file for details
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[7a/04a60e] process > metabat2 (3)           [ 60%] 3 of 5
-
-
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [ 80%] 4 of 5
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/6e/d41cfd5eb2528baec9b56e2701b986/D35B_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/D35B_out [copy] -- See log file for details
-
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[6e/d41cfd] process > metabat2 (4)           [ 80%] 4 of 5
-
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[10/1e8caa] process > canu_assembly (5)      [ 83%] 5 of 6
-[-        ] process > metaquast              -
-[f0/6e96b9] process > metabat2 (5)           [100%] 5 of 5
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/f0/6e96b9cfba42bffb2aa718f19a4a6a/D21A_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/D21A_out [copy] -- See log file for details
-
-executor >  slurm (25)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[-        ] process > metaquast              [  0%] 0 of 1
-[f0/6e96b9] process > metabat2 (5)           [ 83%] 5 of 6
-
-
-executor >  slurm (26)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[-        ] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [ 83%] 5 of 6
-
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [ 83%] 5 of 6
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [ 83%] 5 of 6
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
-WARN: Failed to publish file: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/work/fb/58ad1f8a6c3cec6bc4ff970322cf4f/ALL_out; to: /gpfs/data/fs71579/schmat90/CF/projects/meta/M00001_PacBio_chicken_gut_metagenomics/metabat2/ALL_out [copy] -- See log file for details
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [  0%] 0 of 1
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
-
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [100%] 1 of 1 ✔
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
-
-
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [100%] 1 of 1 ✔
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
+[05/f42d27] process > get_ctg_lengths (1)    [100%] 4 of 4, cached: 4
+[-        ] process > plot_ctg_lengths       -
+
+executor >  local (2)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [  0%] 0 of 1
+[df/be3b6b] process > get_ctg_lengths (5)    [ 83%] 5 of 6, cached: 5
+[89/e5956c] process > plot_ctg_lengths (5)   [100%] 5 of 5, cached: 5
+
+executor >  local (3)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [  0%] 0 of 1
+[df/be3b6b] process > get_ctg_lengths (5)    [100%] 6 of 6, cached: 5 ✔
+[db/8c2bb5] process > plot_ctg_lengths (6)   [ 83%] 5 of 6, cached: 5
+
+executor >  local (3)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [  0%] 0 of 1
+[df/be3b6b] process > get_ctg_lengths (5)    [100%] 6 of 6, cached: 5 ✔
+[db/8c2bb5] process > plot_ctg_lengths (6)   [100%] 6 of 6, cached: 5 ✔
+
+executor >  local (3)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [100%] 1 of 1 ✔
+[df/be3b6b] process > get_ctg_lengths (5)    [100%] 6 of 6, cached: 5 ✔
+[db/8c2bb5] process > plot_ctg_lengths (6)   [100%] 6 of 6, cached: 5 ✔
+
+executor >  local (3)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [100%] 1 of 1 ✔
+[df/be3b6b] process > get_ctg_lengths (5)    [100%] 6 of 6, cached: 5 ✔
+[db/8c2bb5] process > plot_ctg_lengths (6)   [100%] 6 of 6, cached: 5 ✔
 Waiting files transfer to complete (1 files)
 
-executor >  slurm (27)
-[db/243886] process > remove_host_reads (5)  [100%] 6 of 6 ✔
-[1b/75be2f] process > count_reads_wo_host    [100%] 1 of 1 ✔
-[4f/a364f6] process > remove_human_reads (6) [100%] 6 of 6 ✔
-[c8/49a9a0] process > count_reads_wo_human   [100%] 1 of 1 ✔
-[1c/fa6e39] process > canu_assembly (3)      [100%] 6 of 6 ✔
-[8f/9499b0] process > metaquast              [100%] 1 of 1 ✔
-[fb/58ad1f] process > metabat2 (6)           [100%] 6 of 6 ✔
+executor >  local (3)
+[ed/094214] process > remove_host_reads (3)  [100%] 6 of 6, cached: 6 ✔
+[40/614729] process > count_reads_wo_host    [100%] 1 of 1, cached: 1 ✔
+[82/e74c9d] process > remove_human_reads (4) [100%] 6 of 6, cached: 6 ✔
+[f2/565732] process > count_reads_wo_human   [100%] 1 of 1, cached: 1 ✔
+[4d/802e71] process > canu_assembly (5)      [100%] 6 of 6, cached: 6 ✔
+[97/a82fae] process > metaquast              [100%] 1 of 1 ✔
+[df/be3b6b] process > get_ctg_lengths (5)    [100%] 6 of 6, cached: 5 ✔
+[db/8c2bb5] process > plot_ctg_lengths (6)   [100%] 6 of 6, cached: 5 ✔
 Waiting files transfer to complete (1 files)
-Completed at: 02-May-2021 21:32:58
-Duration    : 7h 52m 55s
-CPU hours   : 9.6
-Succeeded   : 27
+Completed at: 10-Jun-2021 12:19:00
+Duration    : 2h 23m 43s
+CPU hours   : 172.1 (33.4% cached)
+Succeeded   : 3
+Cached      : 30
 
 
