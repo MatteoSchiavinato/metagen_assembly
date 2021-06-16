@@ -50,6 +50,7 @@ This pipeline depends on the following programs:
 
 | Software    | Version | Type        | Link                                                          |
 |-------------|---------|-------------|---------------------------------------------------------------|
+| Nextflow    | 21.04.1 | Interpreter | https://www.nextflow.io/                                      |
 | Minimap2    | 2.18    | Program     | https://github.com/lh3/minimap2                               |
 | Samtools    | 1.12    | Program     | http://www.htslib.org/download/                               |
 | Canu        | 2.1.1   | Program     | https://canu.readthedocs.io/en/latest/                        |
