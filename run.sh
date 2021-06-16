@@ -29,6 +29,7 @@ main.nf \
 --human_genome_seq ${WD}/raw_data/host_genomes/hg38.fa \
 --threads 48 \
 --max_mem 90 \
+--perc_core_isolates 80 \
 
 """ \
 > ${WD}/scripts/wf-assembly/cmd.sbatch

@@ -48,16 +48,21 @@ ${PREFIX}.bam
 
 This pipeline depends on the following programs:
 
-| Software  | Version | Type        | Link                                                          |
-|-----------|---------|-------------|---------------------------------------------------------------|
-| Minimap2  | 2.18    | Program     | https://github.com/lh3/minimap2                               |
-| Samtools  | 1.12    | Program     | http://www.htslib.org/download/                               |
-| Canu      | 2.1.1   | Program     | https://canu.readthedocs.io/en/latest/                        |
-| Metaquast | 5.0.2   | Program     | http://quast.sourceforge.net/docs/manual.html                 |
-| Bioawk    | 1.0     | Program     | https://anaconda.org/bioconda/bioawk                          |
-| Prokka    | 1.14.5  | Program     | https://github.com/tseemann/prokka                            |
-| Rscript   | 3.6.2   | Interpreter | https://cran.r-project.org/doc/manuals/r-release/R-admin.html |
-| Python    | 3.8     | Interpreter | https://www.python.org/downloads/                             |
+| Software    | Version | Type        | Link                                                          |
+|-------------|---------|-------------|---------------------------------------------------------------|
+| Minimap2    | 2.18    | Program     | https://github.com/lh3/minimap2                               |
+| Samtools    | 1.12    | Program     | http://www.htslib.org/download/                               |
+| Canu        | 2.1.1   | Program     | https://canu.readthedocs.io/en/latest/                        |
+| Metaquast   | 5.0.2   | Program     | http://quast.sourceforge.net/docs/manual.html                 |
+| Bioawk      | 1.0     | Program     | https://anaconda.org/bioconda/bioawk                          |
+| Prokka      | 1.14.5  | Program     | https://github.com/tseemann/prokka                            |
+| Roary       | 3.13.0  | Program     | https://sanger-pathogens.github.io/Roary/                     |
+| Mcl         | 14-137  | Program     | https://micans.org/mcl/                                       |
+| Mcxdeblast  | 12-068  | Program     | https://micans.org/mcl/man/mcxdeblast.html                    |
+| Blastp      | 2.11.0  | Program     | https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ |
+| Makeblastdb | 2.11.0  | Program     | https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ |
+| Rscript     | 3.6.2   | Interpreter | https://cran.r-project.org/doc/manuals/r-release/R-admin.html |
+| Python      | 3.8     | Interpreter | https://www.python.org/downloads/                             |
 
 Make sure you have them installed before using this pipeline. The installation path of each executable must be modified accordingly in the `nextflow.config` file contained in this repository. Main executables don't need to be in the environment `$PATH`, but you must be sure that they work before using this pipeline. Most of them have dependencies of their own, so take your time to install each of them in your system (or have your sysadmin do it, probably a better choice).
 
@@ -114,6 +119,8 @@ The output of this step is placed in the `/assembly` directory inside the specif
 
 ##### Detection of genes
 
-In the final step of the pipeline, the prokariotic gene predictor **prokka** is used to extract all candidate coding sequences from the assembled contigs. This tool requires a lot of `$PATH` dependencies, so make sure to have it installed properly (see chapter above).
+In the final step of the pipeline, the prokariotic gene predictor **prokka** is used to extract all candidate coding sequences from the assembled contigs. This tool requires a lot of `$PATH` dependencies, so make sure to have it installed properly (see chapter above). Then, the core genome calculator **roary** is used to obtain the number and identity of genes that can make up the core genome of the provided samples. It's important that you set the `--perc_core_isolates` option properly. This option controls the % of samples that have to feature a certain gene, for that gene to be part of the core genome. By default, the value is 99. However, if you have only 5 samples, there is no way you can have a gene in 99% of the isolates: it's either 80% or 100%. Make your own choice but keep this thing in mind.
 
-The results of this step are placed inside the `/pangenome` directory inside the specified `--output_dir`. The `prokka` subdirectory will contain one folder per sample, named as the sample. Inside it, there will be all the prokka output files, which are a lot in many formats. Look up in their official documentation what is what, but you may be interested into the `*.gff` file (containing the gene annotations), the `*.fna` file (containing gene sequences) and the `*.faa` file (containing protein sequences). The `*.txt` file contains a few numbers describing how many genes were predicted. 
+The results of this step are placed inside the `/pangenome` directory inside the specified `--output_dir`. The `prokka` subdirectory will contain one folder per sample, named as the sample. Inside it, there will be all the prokka output files, which are a lot in many formats. Look up in their official documentation and what is what, but you may be interested into the `*.gff` file (containing the gene annotations), the `*.fna` file (containing gene sequences) and the `*.faa` file (containing protein sequences). The `*.txt` file contains a few numbers describing how many genes were predicted.
+
+The **gff** files produced by prokka are then used to calculate the core genome with **roary**. The results are placed inside `/pangenome/roary`. 

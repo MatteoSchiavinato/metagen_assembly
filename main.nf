@@ -330,6 +330,7 @@ process run_prokka {
 
   output:
     tuple val(sample_id), path("${sample_id}", type:"dir") into Prokka_out
+    file "${sample_id}/${sample_id}.gff" into Prokka_gff
 
   script:
     """
@@ -345,6 +346,42 @@ process run_prokka {
     --evalue ${params.evalue} \
     --mincontiglen ${params.min_contig_len} \
     ${fasta} \
+
+    """
+}
+
+
+// run roary to extract core genome 
+
+process run_roary {
+
+  executor = "local"
+  cpus = params.threads
+
+  publishDir "${params.output_dir}/pangenome", mode: "copy"
+
+  input:
+    file all_gffs from Prokka_gff.collect()
+
+  output:
+    path "roary" into Roary_out
+
+  script:
+    """
+    ${ROARY} \
+    -p ${params.threads} \
+    -f roary \
+    -e -n \
+    -i ${params.min_core_identity} \
+    -cd ${params.perc_core_isolates} \
+    -b ${BLASTP} \
+    -c ${MCL} \
+    -d ${MCXDEBLAST} \
+    -m ${MAKEBLASTDB} \
+    -g ${params.max_num_clusters} \
+    -r \
+    -v \
+    ${all_gffs} \
 
     """
 }
