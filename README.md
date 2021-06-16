@@ -74,7 +74,7 @@ To see the pipeline help section, run:
 nextflow run main.nf --help
 ```
 
-Then, run the pipeline with a command like this one, which will also generate a report, a timeline and a direct acyclic graph for the proceeding of the pipeline itself:
+Then, run the pipeline with a command like this one:
 
 ```
 nextflow \
@@ -92,6 +92,7 @@ main.nf \
 
 ##### Nextflow tips
 
+- You can change all parameters from command line or from the `nextflow.config` file. Not all parameters are shown with `--help`, so check the `nextflow.config` file too.
 - You can resume a crashed run by re-running the same command and adding `-resume` as an option after `run`. More info [here](https://www.nextflow.io/docs/latest/getstarted.html).
 - You can specify where to save the temporary files of the pipeline by specifying a `-work-dir` directory right after `run`. More info on that and on other options available in `nextflow run` can be found [here](https://www.nextflow.io/docs/latest/cli.html#clean).
 - The `work` directory tends to become quite crowded and full thousands of internal nextflow files, so every now and then make sure you clean it with `nextflow clean`. More info [here](https://www.nextflow.io/docs/latest/cli.html#clean)
@@ -123,4 +124,4 @@ In the final step of the pipeline, the prokariotic gene predictor **prokka** is 
 
 The results of this step are placed inside the `/pangenome` directory inside the specified `--output_dir`. The `prokka` subdirectory will contain one folder per sample, named as the sample. Inside it, there will be all the prokka output files, which are a lot in many formats. Look up in their official documentation and what is what, but you may be interested into the `*.gff` file (containing the gene annotations), the `*.fna` file (containing gene sequences) and the `*.faa` file (containing protein sequences). The `*.txt` file contains a few numbers describing how many genes were predicted.
 
-The **gff** files produced by prokka are then used to calculate the core genome with **roary**. The results are placed inside `/pangenome/roary`. 
+The **gff** files produced by prokka are then used to calculate the core genome with **roary**. The results are placed inside `/pangenome/roary`.
